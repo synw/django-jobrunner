@@ -4,7 +4,6 @@ from jobrunner.producers import runjob
 
 
 def job(request, cmd_args):
-    print("ARGS", cmd_args)
     if request.user.is_superuser:
         jobname = cmd_args[0]
         jobid = cmd_args[1]
