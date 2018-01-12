@@ -12,6 +12,7 @@ class Command(BaseCommand):
     help = "Launch the jobs runner"
 
     def handle(self, *args, **options):
+        global addr
         c = settings.BASE_DIR + '/jobrunner/run'
         cmd = [c, "-path", settings.BASE_DIR, "-addr",
                addr, "-key", SECRET_KEY, "-cmd_in", INPUT_CHAN, "-cmd_out", OUTPUT_CHAN, "-v", str(VERBOSITY)]
